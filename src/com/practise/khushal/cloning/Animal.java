@@ -3,6 +3,7 @@ package com.practise.khushal.cloning;
 public class Animal implements Cloneable{
 	private String name;
 
+	
 	public String getName() {
 		return name;
 	}
