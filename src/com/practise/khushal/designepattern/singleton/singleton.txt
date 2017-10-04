@@ -1,0 +1,67 @@
+Link for Singleton
+        (a). http://howtodoinjava.com/2012/10/22/singleton-design-pattern-in-java/
+        (b). http://javarevisited.blogspot.in/2013/03/difference-between-singleton-pattern-vs-static-class-java.html
+***********************************************************************************
+
+
+The class’s default constructor is made private, which prevents the direct
+instantiation of the object by others (Other Classes). A static modifier
+is applied to the instance method that returns the object as it is then makes
+this method a class level method that can be accessed without creating an object.
+
+*********************************************************************************
+
+
+Java Singleton Class Example Using Private Constructor
+______________________________________________________
+We can make constructor as private. So that We can not create an object outside of the class.
+This property is useful to create singleton class in java.
+Singleton pattern helps us to keep only one instance of a class at any time.
+The purpose of singleton is to control object creation by keeping private constructor.
+
+***********************************************************************************
+
+When to use Static Class in place of Singleton in Java
+
+When to choose Singleton pattern vs static in Java Indeed there are some situations, where static classes makes sense than Singleton. Prime example of this is 
+java.lang.Math which is not Singleton, instead a class with all static methods. Here are few situation where I think using static class over Singleton pattern make sense:
+
+1) If your Singleton is not maintaining any state, and just providing global access to methods, than consider using static class, as static methods are much 
+   faster than Singleton, because of static binding during compile time. But remember its not advised to maintain state inside static class, especially in 
+   concurrent environment, where it could lead subtle race conditions when modified parallel by multiple threads without adequate synchronization.
+
+You can also choose to use static method, if you need to combine bunch of utility method together. Anything else, which requires singles access to some resource, 
+should use Singleton design pattern.
+
+
+Difference between Singleton vs Static in Java
+
+This is answer of our second interview question about Singleton over static. As I said earlier, fundamental difference between them is, one represent object while 
+other represent a method. Here are few more differences between static and singleton in Java.
+
+1) Static class provides better performance than Singleton pattern, because static methods are bonded on compile time.
+
+2) One more difference between Singleton and static is, ability to override. Since static methods in Java cannot be overridden, they leads to inflexibility. 
+   On the other hand, you can override methods defined in Singleton class by extending it.
+
+3) Static classes are hard to mock and consequently hard to test than Singletons, which are pretty easy to mock and thus easy to test. It’s easier to write JUnit test for Singleton than static classes, because you can pass mock object whenever Singleton is expected, e.g. into constructor or as method arguments.
+
+4) If your requirements needs to maintain state than Singleton pattern is better choice than static class, because
+   maintaining  state in later case is nightmare and leads to subtle bugs.
+
+5) Singleton classes can be lazy loaded if its an heavy object, but static class doesn't have such advantages and always eagerly loaded.
+
+6) Many Dependency Injection framework manages Singleton quite well e.g. Spring, which makes using them very easy.
+
+These are some differences between static class and singleton pattern, this will help to decide between two, which situation arises. In next section we will when to choose Singleton pattern over static class in Java.
+
+
+**************************************************************************************
+Advantage of Singleton Pattern over Static Class in Java
+
+Main advantage of Singleton over static is that former is more object oriented than later. With Singleton, you can use Inheritance and Polymorphism to extend a base class, implement an interface and capable of providing different implementations. If we talk about java.lang.Runtime, which is a Singleton in Java, call to getRuntime() method return different implementations based on different JVM, but guarantees only one instance per JVM, had java.lang.Runtime an static class, it’s not possible to return different implementation for different JVM.
+
+That’s all on difference between Singleton and static class in Java. When you need a class with full OO capability , chose Singleton, while if you just need to store bunch of static methods together, than use static class.
+
+
+Read more: http://javarevisited.blogspot.com/2013/03/difference-between-singleton-pattern-vs-static-class-java.html#ixzz33bBPEJQy

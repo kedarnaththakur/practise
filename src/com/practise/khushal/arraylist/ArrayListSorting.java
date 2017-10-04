@@ -16,8 +16,8 @@ public class ArrayListSorting {
 		
 		/*
 		 * Asscending Order
-		 * Collections.sort(list);
-		System.out.println("List Assending "+list);*/
+		 */ Collections.sort(list);
+		System.out.println("List Assending "+list);
 		
 		/*Decending Order*/
 		/*Collections.sort(list, Collections.reverseOrder());
