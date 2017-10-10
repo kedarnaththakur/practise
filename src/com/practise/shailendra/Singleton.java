@@ -1,7 +1,9 @@
 package com.practise.shailendra;
 	public class Singleton {
-			private static  volatile Singleton  uniqueInstance;
-					private Singleton(){}
+		private static  volatile Singleton  uniqueInstance;
+		private Singleton(){
+			
+		}
 	    public static   Singleton  getInstance() {
 	        if (uniqueInstance ==null )
 	        {
@@ -21,6 +23,7 @@ package com.practise.shailendra;
 	        }
 	        return uniqueInstance ;
 	    }
+
 	    public static void main(String[] args){
 	    	Singleton result = getInstance1();	
 	    	System.out.println("111 "+result.toString());
