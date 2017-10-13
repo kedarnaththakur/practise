@@ -10,14 +10,14 @@ public class Test {
 		//int firstNum =19;
 		//int secondNum=34;
 	//	swap(19,35);
-		try {
-		int result = power(5,2);
+		//try {
+		int result = power(5,-0);
 		System.out.println(":::::"+result);
-		}catch(Exception e) {
+		/*}catch(Exception e) {
 			System.out.println(e.getMessage());	
-		}
+		}*/
 	}
-	public static int power(int n, int p) throws Exception {
+	public static int power(int n, int p) throws Exception  {
 		 if (n < 0 || p < 0) {
 	            throw new Exception("n and p should be non-negative");
 	        }else if (n == 0 || p == 0) {
