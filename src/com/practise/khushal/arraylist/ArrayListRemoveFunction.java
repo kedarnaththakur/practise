@@ -46,7 +46,7 @@ public class ArrayListRemoveFunction {
 			object, they don't work well, when you are iterating over collection.  
 			Let's see a code example to clear doubts
        */
-		//Iterator<Integer> itr = list.iterator();
+		Iterator<Integer> itr = list.iterator();
 		/*while (itr.hasNext()) {
 			Integer integer = (Integer) itr.next();
 			list.remove(2);
@@ -56,12 +56,13 @@ public class ArrayListRemoveFunction {
 			list.remove(3);
 		}*/
 		
-		/*while (itr.hasNext()) {
+		while (itr.hasNext()) {
 			Integer integer = (Integer) itr.next();
 			if (integer==2) {
 				itr.remove();
+				System.out.println("::::::::"+itr.toString());
 			}
-		}*/
+		}
 		//System.out.println(list.toString());
 		
 		/*End of 2nd task*/
